@@ -2,12 +2,16 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import UserList from './UserList.jsx';
 import Counter from './Counter.jsx';
+import UserAPI from './UserAPI.jsx';
+import UserList from './UserList.jsx';
+
 
 
 
 function App() {
+
+
   const [count, setCount] = useState(0)
   const names = ['Alice','Bob','Charlie'];
 const doubled = names.map(name => name.length * 2);
@@ -18,6 +22,7 @@ const { name, age } = person;
 console.log('Destructured:', name, age);
 
 const users = ['Alice','Bob','Charlie'];
+const isLoggedIn = true;
   return (
     <>
       <div>
@@ -38,11 +43,15 @@ const users = ['Alice','Bob','Charlie'];
         </p>
       </div>
       <UserList users={users} />
+      <UserAPI />
+      <div>
+        {isLoggedIn ? <p>Welcome back!</p> : <p>Please log in</p>}
+      </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
     </>
   )
+  
 }
-
 export default App
