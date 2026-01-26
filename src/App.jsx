@@ -18,7 +18,7 @@ const { name, age } = person;
 console.log('Destructured:', name, age);
 
 const users = ['Alice','Bob','Charlie'];
-    return <UserList users={users} />;
+return <UserList users={users} />;
   return (
     <>
       <div>
@@ -44,5 +44,12 @@ const users = ['Alice','Bob','Charlie'];
     </>
   )
 }
+const isLoggedIn = true;
+
+return (
+    <div>
+        {isLoggedIn ? <p>Welcome back!</p> : <p>Please log in</p>}
+    </div>
+);
 
 export default App
