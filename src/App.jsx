@@ -2,8 +2,8 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import UserList from './UserList';
-import Counter from './Counter';
+import UserList from './UserList.jsx';
+import Counter from './Counter.jsx';
 
 
 
@@ -18,7 +18,6 @@ const { name, age } = person;
 console.log('Destructured:', name, age);
 
 const users = ['Alice','Bob','Charlie'];
-return <UserList users={users} />;
   return (
     <>
       <div>
@@ -38,18 +37,12 @@ return <UserList users={users} />;
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
       </div>
+      <UserList users={users} />
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
     </>
   )
 }
-const isLoggedIn = true;
-
-return (
-    <div>
-        {isLoggedIn ? <p>Welcome back!</p> : <p>Please log in</p>}
-    </div>
-);
 
 export default App
